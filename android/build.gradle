@@ -25,9 +25,8 @@ apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
 
 android {
-    namespace = "com.example.barcode_scan"
-
-    compileSdk = 35
+    namespace 'de.mintware.barcode_scan'
+    compileSdk = 29
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -44,7 +43,7 @@ android {
     }
 
     defaultConfig {
-        minSdk = 21
+        minSdk = 18
     }
 
     dependencies {
