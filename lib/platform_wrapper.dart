@@ -29,7 +29,6 @@ class BarcodeScanner {
   static Future<ScanResult> scan({
     ScanOptions options = const ScanOptions(),
   }) async {
-    assert(options != null);
     if (Platform.isIOS) {
       return _doScan(options);
     }

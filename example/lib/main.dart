@@ -46,29 +46,28 @@ class _MyAppState extends State<_MyApp> {
   @override
   Widget build(BuildContext context) {
     var contentList = <Widget>[
-      if (scanResult != null)
-        Card(
-          child: Column(
-            children: <Widget>[
-              ListTile(
-                title: Text("Result Type"),
-                subtitle: Text(scanResult.type?.toString() ?? ""),
-              ),
-              ListTile(
-                title: Text("Raw Content"),
-                subtitle: Text(scanResult.rawContent ?? ""),
-              ),
-              ListTile(
-                title: Text("Format"),
-                subtitle: Text(scanResult.format?.toString() ?? ""),
-              ),
-              ListTile(
-                title: Text("Format note"),
-                subtitle: Text(scanResult.formatNote ?? ""),
-              ),
-            ],
-          ),
+      Card(
+        child: Column(
+          children: <Widget>[
+            ListTile(
+              title: Text("Result Type"),
+              subtitle: Text(scanResult.type?.toString() ?? ""),
+            ),
+            ListTile(
+              title: Text("Raw Content"),
+              subtitle: Text(scanResult.rawContent ?? ""),
+            ),
+            ListTile(
+              title: Text("Format"),
+              subtitle: Text(scanResult.format?.toString() ?? ""),
+            ),
+            ListTile(
+              title: Text("Format note"),
+              subtitle: Text(scanResult.formatNote ?? ""),
+            ),
+          ],
         ),
+      ),
       ListTile(
         title: Text("Camera selection"),
         dense: true,
