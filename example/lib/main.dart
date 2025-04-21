@@ -51,7 +51,7 @@ class _MyAppState extends State<_MyApp> {
           children: <Widget>[
             ListTile(
               title: Text("Result Type"),
-              subtitle: Text(scanResult.type?.toString() ?? ""),
+              subtitle: Text(scanResult.type.toString() ?? ""),
             ),
             ListTile(
               title: Text("Raw Content"),
@@ -59,7 +59,7 @@ class _MyAppState extends State<_MyApp> {
             ),
             ListTile(
               title: Text("Format"),
-              subtitle: Text(scanResult.format?.toString() ?? ""),
+              subtitle: Text(scanResult.format.toString() ?? ""),
             ),
             ListTile(
               title: Text("Format note"),
@@ -99,8 +99,7 @@ class _MyAppState extends State<_MyApp> {
       ListTile(
         title: TextField(
           decoration: InputDecoration(
-            hasFloatingPlaceholder: true,
-            labelText: "Flash On",
+            labelText: "Flash On", floatingLabelBehavior: FloatingLabelBehavior.auto,
           ),
           controller: _flashOnController,
         ),
@@ -108,8 +107,7 @@ class _MyAppState extends State<_MyApp> {
       ListTile(
         title: TextField(
           decoration: InputDecoration(
-            hasFloatingPlaceholder: true,
-            labelText: "Flash Off",
+            labelText: "Flash Off", floatingLabelBehavior: FloatingLabelBehavior.auto,
           ),
           controller: _flashOffController,
         ),
@@ -117,8 +115,7 @@ class _MyAppState extends State<_MyApp> {
       ListTile(
         title: TextField(
           decoration: InputDecoration(
-            hasFloatingPlaceholder: true,
-            labelText: "Cancel",
+            labelText: "Cancel", floatingLabelBehavior: FloatingLabelBehavior.auto,
           ),
           controller: _cancelController,
         ),
@@ -187,7 +184,7 @@ class _MyAppState extends State<_MyApp> {
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           value: selectedFormats.length == _possibleFormats.length
               ? true
-              : selectedFormats.length == 0 ? false : null,
+              : selectedFormats.isEmpty ? false : null,
           onChanged: (checked) {
             setState(() {
               selectedFormats = [

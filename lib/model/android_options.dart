@@ -13,5 +13,5 @@ class AndroidOptions {
   const AndroidOptions({
     this.aspectTolerance = 0.5,
     this.useAutoFocus = true,
-  })  : assert(useAutoFocus != null);
+  });
 }

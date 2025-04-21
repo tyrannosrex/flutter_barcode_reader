@@ -34,6 +34,5 @@ class ScanOptions {
       "flash_on": "Flash on",
       "flash_off": "Flash off",
     },
-  })  : assert(useCamera != null),
-        assert(useCamera >= -1);
+  })  : assert(useCamera >= -1);
 }
