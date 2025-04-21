@@ -17,12 +17,10 @@ class BarcodeScanner {
   static const cameraAccessDenied = 'PERMISSION_NOT_GRANTED';
 
   /// The method channel
-  static const MethodChannel _channel =
-      MethodChannel('de.mintware.barcode_scan');
+  static const MethodChannel _channel = MethodChannel('de.mintware.barcode_scan');
 
   /// The event channel
-  static const EventChannel _eventChannel =
-      EventChannel('de.mintware.barcode_scan/events');
+  static const EventChannel _eventChannel = EventChannel('de.mintware.barcode_scan/events');
 
   /// Starts the camera for scanning the barcode, shows a preview window and
   /// returns the barcode if one was scanned.
@@ -52,8 +50,7 @@ class BarcodeScanner {
       }
     });
 
-    var permissionsRequested =
-        await _channel.invokeMethod('requestCameraPermission');
+    var permissionsRequested = await _channel.invokeMethod('requestCameraPermission');
 
     if (permissionsRequested) {
       return completer.future;
@@ -74,7 +71,7 @@ class BarcodeScanner {
                 ..aspectTolerance = options.android.aspectTolerance
               /**/)
         /**/;
-    var buffer = await _channel.invokeMethod('scan', config?.writeToBuffer());
+    var buffer = await _channel.invokeMethod('scan', config.writeToBuffer());
     var tmpResult = proto.ScanResult.fromBuffer(buffer);
     return ScanResult(
       format: tmpResult.format,
