@@ -24,6 +24,9 @@ rootProject.allprojects {
         jcenter()
         mavenCentral()
         maven { url 'https://jitpack.io' } 
+        flatDir {
+            dirs 'libs'
+        }
     }
 }
 
@@ -76,7 +79,8 @@ protobuf {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'me.dm7.barcodescanner:zxing:1.9.13'
+    // implementation 'me.dm7.barcodescanner:zxing:1.9.13'
+    implementation(name: 'zxing-1.9.13', ext: 'aar')
     implementation 'com.google.protobuf:protobuf-lite:3.0.1'
     api 'com.google.android.material:material:1.1.0'
 }
