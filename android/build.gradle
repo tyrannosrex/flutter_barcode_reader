@@ -43,10 +43,10 @@ android {
         main.proto.srcDirs += '../protos'
     }
     defaultConfig {
-        minSdkVersion 26
+        minSdkVersion 21
         multiDexEnabled true
-        targetSdkVersion 29
-        maxSdkVersion 29
+        targetSdkVersion 31
+        maxSdkVersion 31
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     lintOptions {
